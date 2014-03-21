@@ -9,4 +9,4 @@ Software Libraries - pyserial library written in python (which encapsulates all 
 After connecting the required hardware to Raspberry Pie, now you have to enter the serial port no (for ex - /dev/USB0) in your obd.py file.
 You can check the serial port no by typing the following command in terminal - "dmesg | grep tty".
 
-Finally you have to run the python file by writing "python <filename>" in the terminal. obd.py will print the output to the terminal whereas file.py will store the output to a specified file.
+Finally you have to run the python file by writing "python filename" in the terminal. obd.py will print the output to the terminal whereas file.py will store the output to a specified file.
