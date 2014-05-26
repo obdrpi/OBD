@@ -9,7 +9,7 @@ port.write("ATZ\r")
 time.sleep(2)
 re=port.read(10)
 print ("DATA"+re)
-f = open("obd1.txt","w")
+f = open("obd.txt","w")
 
 def flush():
     port.flushInput()
