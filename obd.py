@@ -3,20 +3,18 @@
 import serial
 import time
 
-port = serial.Serial("/dev/ttyUSB0", baudrate=9600, timeout=2.0,bytesize=8,stopbits=1)
-port.flushInput()
-port.flushOutput()
-time.sleep(2)
-port.write("015B\r")
-#time.sleep(2)
-re=port.readline()
-print ("DATA"+repr(re))
+port = serial.Serial("/dev/ttyUSB0", baudrate=9600, timeout=0.025,bytesize=8,stopbits=1)
 
 def flush():
     port.flushInput()
     port.flushOutput()
+    
+flush()
+flush()
 
-
+port.write("ATDP\r")
+rcv = port.readline()
+print("Supported OBD II Protocol is "+repr(rcv))
 
 def one(rcv): # Calculating the decimal value of 1 byte hexadecimal numbers
     r=rcv.split('\r',1)
